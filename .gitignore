@@ -1,0 +1,14 @@
+*.swp
+*.zip
+package-lock.json
+__pycache__
+.pytest_cache
+.env
+*.egg-info
+.DS_Store
+.idea
+cdk.out
+./lambda-layers/layer-ffmpeg/ffmpeg*
+
+# CDK asset staging directory
+.cdk.staging

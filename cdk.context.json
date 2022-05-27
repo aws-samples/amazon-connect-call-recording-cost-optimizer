@@ -1,0 +1,8 @@
+{
+    "bucket_name": "Amazon S3 bucket name, where Amazon Connect call recordings are stored (This can be found in Amazon connect console(for your connect instance) -> Data Storage -> Call recordings )",
+    "kms_key_arn": "AWS KMS key ARN that is used by Amazon Connect to encrypt call recording files (This can be found in Amazon connect console(for your connect instance) -> Data Storage -> Call recordings -> Encrypted using this key)",
+    "bucket_prefix": "Amazon Connect call recording Path prefix (This can be found in Amazon connect console(for your connect instance) -> Data Storage -> Call recordings)",
+    "num_days_age": "num_days_age is the number of days ago to compress.  Ex. 7. On a daily schedule it converts the call recordings older than current date – 7.",
+    "s3_storage_tier": "Amazon S3 storage tier for compressed call recording files. Default: STANDARD. Options: GLACIER_IR, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER.",
+    "overwrite_previous_converted": "Set this to false as the original file should always be replaced with the compressed file."
+}
