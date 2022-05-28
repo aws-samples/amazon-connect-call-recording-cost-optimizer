@@ -67,20 +67,20 @@ python -m pip install -r requirements.txt
 
 ```
 
-# Bootstrap the account to setup CDK deployments in the region
+### Bootstrap the account to setup CDK deployments in the region
 
 ```
 cdk bootstrap
 
 ```
-# Upon successful completion of `cdk bootstrap`, the project is ready to be deployed.
+### Upon successful completion of `cdk bootstrap`, the project is ready to be deployed.
 
 ```
 cdk deploy 
 
 ```
 
-# To deploy this stack, configure all required fields in cdk.context.json and run the following command which will install layers, install python dependencies, install cdk , bootstrap and deploy the cdk stack.
+### To deploy this stack, configure all required fields in cdk.context.json and run the following command which will install layers, install python dependencies, install cdk , bootstrap and deploy the cdk stack.
 
 ```
 ./cdk-deploy.sh
