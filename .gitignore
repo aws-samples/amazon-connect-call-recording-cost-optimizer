@@ -8,7 +8,6 @@ __pycache__
 .DS_Store
 .idea
 cdk.out
-./lambda-layers/layer-ffmpeg/ffmpeg*
 
 # CDK asset staging directory
 .cdk.staging
