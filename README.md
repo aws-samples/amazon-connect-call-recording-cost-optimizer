@@ -31,7 +31,7 @@ The project code requires that the AWS account is [bootstrapped](https://docs.aw
 
 ## Pre-requisites
 
-2. Configure CDK context parameters in `cdk.context.json` found in the root directory
+Configure CDK context parameters in `cdk.context.json` found in the root directory
 
 ```
 1.	bucket_name – Amazon S3 bucket name, where the Amazon Connect call recordings are stored (This can be found in Amazon Connect console(for your Connect instance) -> Data Storage -> Call recordings ).
