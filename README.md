@@ -95,7 +95,7 @@ cdk destroy
 
 ```
 
-This command deletes resources there were deployed by AWS CDK. Amazon S3 bucket containing the call recordings and CloudWatch log groups are retained after the stack is deleted.
+This command deletes resources that were deployed by AWS CDK. The Amazon S3 bucket containing the call recordings and CloudWatch log groups are retained after the stack is deleted.
 
 ## Security
 
