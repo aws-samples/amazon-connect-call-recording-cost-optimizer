@@ -5,11 +5,11 @@
 This solution enables you to reduce the storage cost of archived contact center call recordings, by automating scheduling, storage tiering, and resampling of contact center call recording files. The solution is designed as serverless asynchronous workflow, utilizing AWS Step Functions, Amazon SQS, and AWS Lambda. 
 
 
-![Alt text](call-recordining-convert-arch-2.png?raw=true "Call Recording Conversion Solution")
+![Alt text](call-recording-convert-arch-2.png?raw=true "Call Recording Conversion Solution")
 
 
 # Solution
-A daily Amazon EventBridge scheduled rule triggers the AWS Step Functions workflow, which orchestrates the batch resampling process for all the files that are older than 7 days. For instance, if today was 15th of Feb, the workflow would not resample files between 15th of February and 8th of February, and it would only process files that are older than 8th of February.
+A daily Amazon EventBridge scheduled rule triggers the AWS Step Functions state machine, which orchestrates the batch resampling process for all the files that are older than 7 days. For instance, if today was 15th of Feb, the workflow would not resample files between 15th of February and 8th of February, and it would only process files that are older than 8th of February.
 
 In the First task ("7 days ago recordings s3 iterator"), a Lambda function ("step-iterator") iterates through Amazon Connect call recording S3 bucket using the ListObjectsV2 API obtaining the call recordings (1000 objects per iteration) with the S3 date prefix from 7 days ago.
 
@@ -20,7 +20,10 @@ Figure 3. Step Function workflow diagram
 AWS Step Functions workflow handles failures, through logging, and a dead-letter queue (DLQ), ("connect_audio_convert_dlq"), to collect messages that can't be processed successfully. The resampling Lambda function ("media-convert-files") uses another DLQ ("connect_audio_convert_dest_failure_queue") for files that can't be resampled. A Step Function task ("More files to process?") monitors the SQS queue ("connect_audio_convert"), using the Step Functions AWS SDK integration with SQS, and completes the Step Function workflow when the queue ("connect_audio_convert") is emptied.
 
 
-![Alt text](call-recordining-convert-arch.png?raw=true "Call Recording Conversion Architecture Diagram")
+![Alt text](call-recording-convert-arch-3.png?raw=true "Call Recording Resampling Architecture Diagram")
+
+
+![Alt text](call-recording-convert-arch-4.png?raw=true "Call Recording Resampling Architecture AWS Step Function state machine")
 
 
 # Deploying the project
