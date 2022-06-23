@@ -5,7 +5,7 @@
 This solution enables you to reduce the storage cost of archived contact center call recordings, by automating scheduling, storage tiering, and resampling of contact center call recording files. The solution is designed as serverless asynchronous workflow, utilizing AWS Step Functions, Amazon SQS, and AWS Lambda. 
 
 
-![Alt text](call-recording-convert-arch-2.png?raw=true "Call Recording Conversion Solution")
+![Alt text](call-recordining-convert-arch-2.png?raw=true "Call Recording Conversion Solution")
 
 
 # Solution
